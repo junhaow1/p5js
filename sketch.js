@@ -29,7 +29,7 @@ function keyPressed() {
 function setup() {
     createCanvas(1200,800);
     // createCanvas(600, 600);
-    strokeWeight(1)
+    strokeWeight(2)
 
     // I don't want outlines at all in this drawing,
     // so I can "globally" turn this off in setup()
@@ -39,8 +39,69 @@ function setup() {
 
 function draw() {
 
+    fill(255, 0, 0);
+    rect(100, 100, 50, 50)
+    fill(0, 255, 0);
+    rect(300, 100, 50, 50)
+    fill(0, 0, 255);
+    rect(500, 100, 50, 50)
+    fill(255)
+    rect(30, 30, 50, 20)
+
+    //draw a drawpad
+    fill(255)
+    line(600,400,800,400)
+    line(600,400,600,600)
+    line(800,400,800,600)
+    line(600,600,800,600)
+    // rect(600,400,100,100)
+
+
+
+    //make the button can switch the color
+    if (mouseIsPressed == true) {
+        stroke(currentColor);
+        //second x
+        if ((mouseX>=600 && mouseX<=800) &&(mouseY>=400 && mouseY<=600)){
+            line(mouseX, mouseY, pmouseX, pmouseY);
+
+        }
+
+    }
+
+    if (mouseIsPressed) {
+        if (mouseX > 100 && mouseX < 150 && mouseY > 100 && mouseY < 150) {
+            print('switching to color red');
+            currentColor = 'red';
+        } else if (mouseX > 300 && mouseX < 350 && mouseY > 100 && mouseY < 150) {
+            print('switching to color green');
+            currentColor = 'green';
+        } else if (mouseX > 500 && mouseX < 550 && mouseY > 100 && mouseY < 150) {
+            print('switching to blue');
+            currentColor = 'blue';
+        } else if (mouseX > 32 && mouseX < 80 && mouseY > 33 && mouseY < 50) {
+            print('clearing the bg');
+            background(255);
+            currentColor = 'black';
+
+        }
+    }
+
+    //name the button
+    textSize(20);
+    text('Red', 108, 132);
+    textSize(15);
+    text('Green', 302, 132);
+    textSize(20);
+    text('blue', 508, 132);
+
+
+
+
+
+
     // back wall
-    background(140);
+    // background(140);
 
     // ceilling
     fill(170);
@@ -54,7 +115,7 @@ function draw() {
 
     // table
     fill(180);
-    rect(width/2-300/2, height-200, 500,20);     // top
+    rect(width/2-300/2, height-200, 300,20);     // top
     rect(width/2-260/2, height-190, 260,15);     // apron
     rect(width/2-260/2, height-175, 10,100);     // L leg
     rect(width/2+260/2-10, height-175, 10,100);  // R leg
@@ -219,48 +280,7 @@ function draw() {
 
     //print('x:' + mouseX + 'y:' + mouseY);
     //the button
-    fill(255, 0, 0);
-    rect(100, 100, 50, 50)
-    fill(0, 255, 0);
-    rect(300, 100, 50, 50)
-    fill(0, 0, 255);
-    rect(500, 100, 50, 50)
-    fill(255)
-    rect(30, 30, 50, 20)
 
-
-
-    //make the button can switch the color
-    if (mouseIsPressed == true) {
-        stroke(currentColor);
-        line(mouseX, mouseY, pmouseX, pmouseY);
-    }
-
-    if (mouseIsPressed) {
-        if (mouseX > 100 && mouseX < 150 && mouseY > 100 && mouseY < 150) {
-            print('switching to color red');
-            currentColor = 'red';
-        } else if (mouseX > 300 && mouseX < 350 && mouseY > 100 && mouseY < 150) {
-            print('switching to color green');
-            currentColor = 'green';
-        } else if (mouseX > 500 && mouseX < 550 && mouseY > 100 && mouseY < 150) {
-            print('switching to blue');
-            currentColor = 'blue';
-        } else if (mouseX > 32 && mouseX < 80 && mouseY > 33 && mouseY < 50) {
-            print('clearing the bg');
-            background(255);
-            currentColor = 'black';
-
-        }
-    }
-
-    //name the button
-    textSize(20);
-    text('Red', 108, 132);
-    textSize(15);
-    text('Green', 302, 132);
-    textSize(20);
-    text('blue', 508, 132);
 
 
 }
