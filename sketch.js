@@ -40,14 +40,38 @@ function setup() {
 
     // back wall
     background(140);
+    fill(255);
+    rect(550+5,250+5, 290,190);
+
 
     // I don't want outlines at all in this drawing,
     // so I can "globally" turn this off in setup()
     noStroke();
 }
 
+function book(x,y,width,c){
+    fill(c);
+    rect(x,y,width,100);
+    fill(255);
+    rect(x+5,y+10,25,10);
+}
+
+function pencil(x,y,color){
+    fill(c);
+    triangle(x,y,x-5,y+5,x+5,y+5)
+    fill(0);
+    rect(x-2.5,y+5,3,10);
+}
+
 
 function draw() {
+
+    // let c00 = color(254,95,85)
+    // let c11 = color(214,209,17)
+    // let c22 = color(199,239,207)
+    //
+    // pencil(500,470,c11)
+
 
     fill(255, 0, 0);
     rect(100, 100, 50, 50)
@@ -70,190 +94,129 @@ function draw() {
 
     // table
     fill(180);
-    rect(width/2-300/2, height-200, 300,10);     // top
-    rect(width/2-260/2, height-190, 260,15);     // apron
-    rect(width/2-260/2, height-175, 10,100);     // L leg
-    rect(width/2+260/2-10, height-175, 10,100);  // R leg
+    rect(width/2-600/2, height-400+50+20+20+20, 600,20);     // top
+    rect(width/2-520/2, height-380+50+20+20+20, 520,30);     // apron
+    rect(width/2-520/2, height-350+50+20+20+20, 20,200);     // L leg
+    rect(width/2+520/2-20, height-350+50+20+20+20, 20,200);  // R leg
 
     fill(110);                                   // feet
-    rect(width/2-260/2, height-75,10,5);
-    rect(width/2+260/2, height-75,-10,5);
+    rect(width/2-520/2, height-150+50+20+20+20,20,10);
+    rect(width/2+480/2, height-150+50+20+20+20,20,10);
 
     fill(160);                                   // shadow
-    rect(width/2-260/2, height-190, 260,5);
+    rect(width/2-520/2, height-380+50+20+20+20, 520,10);
 
     // short bench
     fill(200);
-    rect(width/2+150, height-140, 70,10);   // top
-    rect(width/2+150, height-130, 10,60);   // L leg
-    rect(width/2+210, height-130, 10,60);   // R leg
+    rect(width/2+300, height-280+70+30+10, 140,20);   // top
+    rect(width/2+300, height-260+70+30+10, 20,120);   // L leg
+    rect(width/2+420, height-260+70+30+10, 20,120);   // R leg
 
     fill(220,50,110);                       // pad
-    rect(width/2+150,height-150, 70,10);
+    rect(width/2+300,height-300+70+30+10, 140,20);
 
     fill(110);                              // feet
-    rect(width/2+150,height-75, 10,5);
-    rect(width/2+210,height-75, 10,5);
+    rect(width/2+300,height-150+70+30+10, 20,10);
+    rect(width/2+420,height-150+70+30+10, 20,10);
 
     fill(180);                              // shadow
-    rect(width/2+150, height-130, 10,5);
-    rect(width/2+210, height-130, 10,5);
+    rect(width/2+300, height-260+70+30+10, 20,10);
+    rect(width/2+420, height-260+70+30+10, 20,10);
 
     // long bench
     fill(200);
-    rect(width/2-180, height-140,200,10);   // top
-    rect(width/2-180, height-140,10,70);    // L leg
-    rect(width/2+10, height-130, 10,60);    // R leg
+    rect(width/2-180*2, height-140*2+110,200*2,10*2);   // top
+    rect(width/2-180*2, height-140*2+110,10*2,70*2);    // L leg
+    rect(width/2+10*2, height-130*2+110, 10*2,60*2);    // R leg
 
     fill(220,50,110);                       // pad
-    rect(width/2-180, height-150,200,10);
+    rect(width/2-180*2, height-150*2+110,200*2,10*2);
 
     fill(110);                              // feet
-    rect(width/2-180,height-75, 10,5);
-    rect(width/2+10, height-75, 10,5);
+    rect(width/2-180*2,height-75*2+110, 10*2,5*2);
+    rect(width/2+10*2, height-75*2+110, 10*2,5*2);
 
     fill(180);                              // shadow
-    rect(width/2-180,height-130, 10,5);
-    rect(width/2+10, height-130, 10,5);
+    rect(width/2-180*2,height-130*2+110, 10*2,5*2);
+    rect(width/2+10*2, height-130*2+110, 10*2,5*2);
 
     // lamp
     fill(255,40);                   // some light
-    ellipse(width/2,290, 50,50);
+    ellipse(width/2,150, 50,50);
     fill(255,30);                   // some more
-    ellipse(width/2,290, 60,60);
+    ellipse(width/2,150, 60,60);
     fill(255,20);                   // and more
-    ellipse(width/2,290, 70,70);
+    ellipse(width/2,150, 70,70);
     fill(255,10);                   // and more
-    ellipse(width/2,290, 80,80);
+    ellipse(width/2,150, 80,80);
 
     fill(255,150);                  // bulb
-    ellipse(width/2,290, 40,40);
+    ellipse(width/2,150, 40,40);
 
     fill(30);                       // cord
-    rect(width/2-2,0, 4,250);
+    rect(width/2-2,0, 4,100);
 
     fill(60);                       // shade
-    rect(width/2-50,250, 100,50);
-
-    // // looking out the window
-    // fill(0,200,255);                // sky
-    // rect(0,100, 80,300);
-    //
-    // fill(35,190,95);                // grass
-    // rect(0,300,80,100);
-    // fill(220,220,255);
-
-    // // house in the distance
-    // beginShape();         // front
-    // vertex(0,200);
-    // vertex(40,230);
-    // vertex(40,300);
-    // vertex(0,300);
-    // endShape();
-    //
-    // fill(200,200,235);    // side
-    // rect(40,230, 40,70);
-    //
-    // fill(90,90,95);       // roof
-    // beginShape();
-    // vertex(0,200);
-    // vertex(80,200);
-    // vertex(80,240);
-    // vertex(40,240);
-    // endShape();
-    //
-    // fill(70,70,75);       // chimney
-    // rect(15,190, 20,10);
-    //
-    // fill(200,130,215);    // house window
-    // rect(0,240, 10,30);
-    //
-    // // window frame
-    // fill(100);
-    // rect(0,100,80,10);    // top sill
-    // rect(80,100,10,300);  // right sill
-    // rect(0,260,80,10);    // center div
-    //
-    // fill(120);            // bottom sill
-    // rect(0,400, 100,10);
-    //
-    // fill(100);            // sill base
-    // rect(0,410, 90,30);
-    // fill(80);
-    // rect(0,410, 90,10);
-
-    // // curtains
-    // fill(40);
-    // rect(0,110, 110,4);       // rod
-    // ellipse(110,112, 12,12);  // knob
-    // fill(255, 150);
-    // rect(50,110, 50,270);     // curtain
-    // rect(50,110, 50,15);      // top curtain bit
-
-    // // painting on the wall
-    // fill(200);
-    // rect(width-110,190, 110,170);
-    // fill(230,175,0);
-    // rect(width-100,200, 100,150);
-
-    // // bowl of fruit
-    // fill(190,140,0);                        // oranges
-    // ellipse(width/2-20,height-240, 30,30);
-    // ellipse(width/2+15,height-240,30,30);
-    //
-    // fill(0,150,0);                          // little green stem piece
-    // ellipse(width/2-25,height-248, 3,3);
-    //
-    // fill(200,150,0);                        // another orange
-    // ellipse(width/2,height-240, 30,30);
-    //
-    // fill(0,150,0);
-    // ellipse(width/2+3,height-250, 3,3);
-    //
-    // fill(0,150,255);                        // bowl
-    // arc(width/2, height-240, 80,80, 0,PI);
-    // fill(0,120,230);                        // lip
-    // rect(width/2-42,height-240, 84,5);
-
-    // // glasses of juice
-    // fill(255,30);                           // glass
-    // rect(width/2-100,height-250, 30,50);
-    // rect(width/2+100,height-250, -30,50);
-    //
-    // fill(185,15,15,150);                    // juice
-    // rect(width/2-95,height-230, 20,25);
-    // rect(width/2+95,height-215, -20,10);
-
-    // mouse hole (a rectangle with rounded corners)
-    // fill(50);
-    // rect(width-35,height-125, 20,25, 10,10,0,0);
-
-    // when done, we can save it to an image file!
-    // (remember to add noLoop() in the setup)
-    // save("TableAndChairs.png");
+    rect(width/2-75,100, 150,50);
 
 
-    //print('x:' + mouseX + 'y:' + mouseY);
-    //the button
+    //frame leg left
+    fill(60);                       // shade
+    rect(640,450, 20,60,0,0,10,10);
+
+    //frame right left
+    fill(60);                       // shade
+    rect(740,450, 20,60,0,0,10,10);
+
+    //frame bottom bar
+    fill(60);                       // shade
+    rect(660,470, 80,10);
+
+
+    //frame top
+    fill(60);
+    rect(550,250, 300,5,5);
+    //frame left
+    fill(60);
+    rect(550,250, 5,200,5);
+    //frame right
+    fill(60);
+    rect(850-5,250, 5,200,5);
+    //frame bottom
+    fill(60);
+    rect(550,450-5, 300,5,5);
+
+
+
 
     //draw a drawpad
-    fill(255)
-    line(600,400,800,400)
-    line(600,400,600,600)
-    line(800,400,800,600)
-    line(600,600,800,600)
+    // fill(0)
+    // line(600,400-100-50,800,400-100-50)
+    // line(600,400-100-50,600,600-100-50)
+    // line(800,400-100-50,800,600-100-50)
+    // line(600,600-100-50,800,600-100-50)
     // rect(600,400,100,100)
 
+
+    //filefolder
+    let c = color(254,95,85)
+    let c1 = color(214,209,17)
+    let c2 = color(199,239,207)
+    book(330,410,35,c)
+    book(330+35,410,35,c1)
+    book(330+70,410,35,c2)
 
 
     //make the button can switch the color
     if (mouseIsPressed == true) {
         stroke(currentColor);
         //second x
-        if ((mouseX>=600 && mouseX<=800) &&(mouseY>=400 && mouseY<=600) && (pmouseX>=600 && pmouseX<=800) &&(pmouseY>=400 && pmouseY<=600)     ){
+        if ((mouseX>=550 && mouseX<=850) &&(mouseY>=250 && mouseY<=450) && (pmouseX>=550 && pmouseX<=850) &&(pmouseY>=250 && pmouseY<=450)     ){
             line(mouseX, mouseY, pmouseX, pmouseY);
 
         }
+        noStroke();
+
 
     }
 
@@ -269,7 +232,8 @@ function draw() {
             currentColor = 'blue';
         } else if (mouseX > 32 && mouseX < 80 && mouseY > 33 && mouseY < 50) {
             print('clearing the bg');
-            background(255);
+            // background(255);
+            setup()
             currentColor = 'black';
         }
     }
