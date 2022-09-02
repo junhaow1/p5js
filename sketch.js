@@ -11,7 +11,7 @@ CHALLENGES
 
 */
 
-let currentColor = 'black'
+let currentColor = 'white'
 
 // function setup() {
 //     createCanvas(600, 600);
@@ -56,31 +56,18 @@ function book(x,y,width,c){
     rect(x+5,y+10,25,10);
 }
 
-function pencil(x,y,color){
-    fill(c);
-    triangle(x,y,x-5,y+5,x+5,y+5)
-    fill(0);
-    rect(x-2.5,y+5,3,10);
+function pencil(x,y,color1){
+    fill(color1);
+    triangle(x,y,x-12,y+30,x+12,y+30)
+    fill(80);
+    rect(x-6,y+30,12,50);
 }
 
 
 function draw() {
 
-    // let c00 = color(254,95,85)
-    // let c11 = color(214,209,17)
-    // let c22 = color(199,239,207)
-    //
-    // pencil(500,470,c11)
 
 
-    fill(255, 0, 0);
-    rect(100, 100, 50, 50)
-    fill(0, 255, 0);
-    rect(300, 100, 50, 50)
-    fill(0, 0, 255);
-    rect(500, 100, 50, 50)
-    fill(255)
-    rect(30, 30, 50, 20)
 
     // ceilling
     fill(170);
@@ -188,16 +175,6 @@ function draw() {
 
 
 
-
-    //draw a drawpad
-    // fill(0)
-    // line(600,400-100-50,800,400-100-50)
-    // line(600,400-100-50,600,600-100-50)
-    // line(800,400-100-50,800,600-100-50)
-    // line(600,600-100-50,800,600-100-50)
-    // rect(600,400,100,100)
-
-
     //filefolder
     let c = color(254,95,85)
     let c1 = color(214,209,17)
@@ -206,8 +183,13 @@ function draw() {
     book(330+35,410,35,c1)
     book(330+70,410,35,c2)
 
+    pencil(520-10-10-10-10-10-10,430,'red')
+    pencil(520-10-10-10-10-10-10+24+5,430,'green')
+    pencil(520-10-10-10-10-10-10+48+10,430,'blue')
 
-    //make the button can switch the color
+
+
+
     if (mouseIsPressed == true) {
         stroke(currentColor);
         //second x
@@ -221,30 +203,37 @@ function draw() {
     }
 
     if (mouseIsPressed) {
-        if (mouseX > 100 && mouseX < 150 && mouseY > 100 && mouseY < 150) {
+        //here
+        if (mouseX > (460-12) && mouseX < (460+12) && mouseY > (430) && mouseY < (430+80)) {
             print('switching to color red');
             currentColor = 'red';
-        } else if (mouseX > 300 && mouseX < 350 && mouseY > 100 && mouseY < 150) {
+        } else if (mouseX > (489-12) && mouseX < (489+12) && mouseY > 430 && mouseY < (430+80)) {
             print('switching to color green');
             currentColor = 'green';
-        } else if (mouseX > 500 && mouseX < 550 && mouseY > 100 && mouseY < 150) {
+        } else if (mouseX > (518-12) && mouseX < (518+12) && mouseY > 430 && mouseY < (430+80)) {
             print('switching to blue');
             currentColor = 'blue';
-        } else if (mouseX > 32 && mouseX < 80 && mouseY > 33 && mouseY < 50) {
+        }
+        else if (mouseX > 560 && mouseX < 600 && mouseY > (485) && mouseY < (485+25)) {
             print('clearing the bg');
             // background(255);
             setup()
-            currentColor = 'black';
         }
     }
 
-    //name the button
-    textSize(20);
-    text('Red', 108, 132);
-    textSize(15);
-    text('Green', 302, 132);
-    textSize(20);
-    text('blue', 508, 132);
+    // //name the button
+    // textSize(20);
+    // text('Red', 108, 132);
+
+    //eraser
+    fill(255)
+    rect(500+20+20+20,440+20+20+5,40,13,10,10,0,0)
+    fill('darkblue')
+    rect(500+20+20+20-4,440+20+20+5+13,40+8,12)
+
+
+
+
 
 
 
