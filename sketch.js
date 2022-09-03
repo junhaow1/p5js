@@ -28,18 +28,19 @@ function keyPressed() {
 
 function setup() {
     createCanvas(1200,800);
-    // createCanvas(600, 600);
     strokeWeight(2)
-    // fill(255)
-    // // line(600,400,800,400)
-    // // line(600,400,600,600)
-    // // line(800,400,800,600)
-    // // line(600,600,800,600)
-    // //drawing board
-    // rect(600,400,200,200)
+    // textSize(60);
+    // fill(255);
+
+
+
+
+
 
     // back wall
     background(140);
+    // background(255);
+
     fill(255);
     rect(550+5,250+5, 290,190);
 
@@ -47,6 +48,15 @@ function setup() {
     // I don't want outlines at all in this drawing,
     // so I can "globally" turn this off in setup()
     noStroke();
+
+
+
+    fill(0)
+    text(key, 100, 100); // Draw at coordinate (20,75)
+
+    let s = 'Type to display, pencil to draw, rubber to erase';
+    fill(50);
+    text(s, 600-10-10-10, 250+10, 280, 100); // Text wraps within text box
 }
 
 function book(x,y,width,c){
@@ -230,6 +240,9 @@ function draw() {
     rect(500+20+20+20,440+20+20+5,40,13,10,10,0,0)
     fill('darkblue')
     rect(500+20+20+20-4,440+20+20+5+13,40+8,12)
+
+
+
 
 
 
