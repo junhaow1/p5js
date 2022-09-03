@@ -51,9 +51,11 @@ function setup() {
 
 
 
-    fill(0)
-    text(key, 100, 100); // Draw at coordinate (20,75)
+    fill(50)
+    text(key, 600-10-10-10, 250+10);
 
+
+    //text message on screen
     let s = 'Type to display, pencil to draw, rubber to erase';
     fill(50);
     text(s, 600-10-10-10, 250+10, 280, 100); // Text wraps within text box
