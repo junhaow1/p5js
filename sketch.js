@@ -1,22 +1,6 @@
-/*
 
-CHALLENGES
-+ As much as you can, try to use the width/height variables for
-  all drawing commands
-+ Can you put your table/chairs in a room? What about a window
-  with a view outside?
-+ If you're feeling really adventurous, try drawing everything
-  in pseudo-3D! (Hint: use ellipse() and begin/endShape() for
-  most of your drawing commands)
-
-*/
 
 let currentColor = 'white'
-
-// function setup() {
-//     createCanvas(600, 600);
-//     strokeWeight(1)
-// }
 
 
 function keyPressed() {
@@ -29,11 +13,10 @@ function keyPressed() {
 function setup() {
     createCanvas(1200,800);
     strokeWeight(2)
+
+
     // textSize(60);
     // fill(255);
-
-
-
 
 
 
@@ -45,14 +28,14 @@ function setup() {
     rect(550+5,250+5, 290,190);
 
 
-    // I don't want outlines at all in this drawing,
-    // so I can "globally" turn this off in setup()
+
     noStroke();
 
 
 
     fill(50)
     text(key, 600-10-10-10, 250+10);
+
 
 
     //text message on screen
@@ -73,10 +56,23 @@ function pencil(x,y,color1){
     triangle(x,y,x-12,y+30,x+12,y+30)
     fill(80);
     rect(x-6,y+30,12,50);
+
 }
 
+let inputText = []
 
 function draw() {
+    //text
+    // fill(0);
+    // text( key, 600-40, 300,200,100);
+
+    if (keyIsPressed === true){
+        append(inputText,key)
+    }
+    print(inputText)
+    fill(0);
+    let message = join(inputText,",")
+    text( message, 600-40, 300,100,300);
 
 
 
@@ -242,14 +238,6 @@ function draw() {
     rect(500+20+20+20,440+20+20+5,40,13,10,10,0,0)
     fill('darkblue')
     rect(500+20+20+20-4,440+20+20+5+13,40+8,12)
-
-
-
-
-
-
-
-
 
 
 
