@@ -3,11 +3,7 @@
 let currentColor = 'white'
 
 
-function keyPressed() {
-    if (key == 's') {
-        saveCanvas('myart.png');
-    }
-}
+
 
 
 function setup() {
@@ -73,8 +69,6 @@ function draw() {
     fill(0);
     let message = join(inputText,",")
     text( message, 600-40, 300,100,300);
-
-
 
 
     // ceilling
