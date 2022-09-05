@@ -13,6 +13,9 @@ function setup() {
 
     // textSize(60);
     // fill(255);
+    // textSize(60);
+    fill(0);
+
 
 
 
@@ -29,15 +32,25 @@ function setup() {
 
 
 
-    fill(50)
-    text(key, 600-10-10-10, 250+10);
+    // fill(50)
+    // text(key, 600-10-10-10, 250+10);
 
 
 
     //text message on screen
-    let s = 'Type to display, pencil to draw, rubber to erase';
+    let s = 'Click pencil to draw, rubber to erase, button to check time';
     fill(50);
     text(s, 600-10-10-10, 250+10, 280, 100); // Text wraps within text box
+
+    createButton("light")
+    //clock
+    fill(255)
+    rect(800,470,100,40,5)
+    fill(100)
+    rect(820-10,480-5,80,30,5)
+    fill('red')
+    rect(880,465-5,10,10,1)
+
 }
 
 function book(x,y,width,c){
@@ -62,14 +75,27 @@ function draw() {
     // fill(0);
     // text( key, 600-40, 300,200,100);
 
+    // arc(800,510,50,40)
+
+    // if(mouseIsPressed){
+    //     print("sss")
+    // }
+
+
+
     if (keyIsPressed === true){
         append(inputText,key)
     }
     print(inputText)
     fill(0);
     let message = join(inputText,",")
-    text( message, 600-40, 300,100,300);
+    text( message, 600-40, 300,100,100);
+    text(key, 20, 75); // Draw at coordinate (20,75)
 
+
+
+    // fill(0)
+    // rect(800,510,50,50)
 
     // ceilling
     fill(170);
@@ -101,7 +127,7 @@ function draw() {
     rect(width/2+300, height-260+70+30+10, 20,120);   // L leg
     rect(width/2+420, height-260+70+30+10, 20,120);   // R leg
 
-    fill(220,50,110);                       // pad
+    fill(234,218,162);                       // pad
     rect(width/2+300,height-300+70+30+10, 140,20);
 
     fill(110);                              // feet
@@ -118,7 +144,7 @@ function draw() {
     rect(width/2-180*2, height-140*2+110,10*2,70*2);    // L leg
     rect(width/2+10*2, height-130*2+110, 10*2,60*2);    // R leg
 
-    fill(220,50,110);                       // pad
+    fill(234,218,162);                       // pad
     rect(width/2-180*2, height-150*2+110,200*2,10*2);
 
     fill(110);                              // feet
@@ -201,25 +227,36 @@ function draw() {
         }
         noStroke();
 
+        // if ((mouseX>=800 && mouseX<=850) &&(mouseY>=460 && mouseY<=510)){
+        //     background(0)
+        // }
+
+
 
     }
 
     if (mouseIsPressed) {
         //here
         if (mouseX > (460-12) && mouseX < (460+12) && mouseY > (430) && mouseY < (430+80)) {
-            print('switching to color red');
             currentColor = 'red';
         } else if (mouseX > (489-12) && mouseX < (489+12) && mouseY > 430 && mouseY < (430+80)) {
-            print('switching to color green');
             currentColor = 'green';
         } else if (mouseX > (518-12) && mouseX < (518+12) && mouseY > 430 && mouseY < (430+80)) {
-            print('switching to blue');
             currentColor = 'blue';
         }
         else if (mouseX > 560 && mouseX < 600 && mouseY > (485) && mouseY < (485+25)) {
-            print('clearing the bg');
             // background(255);
             setup()
+        }
+        else if (mouseX > (880-10) && mouseX < (885+10) && mouseY > (460-10) && mouseY < (465+10)) {
+            // background(255);
+            setup()
+            let h = hour();
+            let min = minute();
+            // let sec = second();
+            textSize(18)
+            fill('white')
+            text(  h+':'+min, 810+15, 475+10+10);            // currentTime()
         }
     }
 
@@ -232,6 +269,8 @@ function draw() {
     rect(500+20+20+20,440+20+20+5,40,13,10,10,0,0)
     fill('darkblue')
     rect(500+20+20+20-4,440+20+20+5+13,40+8,12)
+
+
 
 
 
